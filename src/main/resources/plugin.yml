@@ -1,0 +1,6 @@
+name: HarderWardens
+version: 1.0
+main: me.minecraft.plugin.harderWardens.HarderWardens
+api-version: 1.21
+authors: [ JustErikSK ]
+description: Wardens have much more health and deal more damage but they also give good rewards for defeating them!

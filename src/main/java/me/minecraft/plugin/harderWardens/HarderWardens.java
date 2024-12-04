@@ -28,8 +28,8 @@ public final class HarderWardens extends JavaPlugin implements Listener {
 
         if (e.getEntity() instanceof LivingEntity ent) {
             if (ent.getType() == EntityType.WARDEN) {
+                ent.setCustomNameVisible(false);
                 ent.setCustomName("JOHNY");
-                ent.setCustomNameVisible(true);
                 ent.setMaxHealth(1000);
                 ent.setHealth(1000);
             }
@@ -46,6 +46,7 @@ public final class HarderWardens extends JavaPlugin implements Listener {
         ItemStack diamond_sword = new ItemStack(Material.DIAMOND_SWORD);
 
         if (ent.getType() == EntityType.WARDEN) {
+            e.getDrops().clear();
             if (num >= 80) {
                 e.getDrops().add(new ItemStack(Material.TOTEM_OF_UNDYING));
             } else if (num >= 60 && num < 80) {
@@ -53,14 +54,14 @@ public final class HarderWardens extends JavaPlugin implements Listener {
             } else if (num >= 40 && num < 60) {
                 e.getDrops().add(new ItemStack(Material.RIB_ARMOR_TRIM_SMITHING_TEMPLATE));
                 e.getDrops().add(new ItemStack(Material.SILENCE_ARMOR_TRIM_SMITHING_TEMPLATE));
-                e.getDrops().add(new ItemStack(Material.DIAMOND_CHESTPLATE));
                 diamond_chestplate.addEnchantment(Enchantment.PROTECTION, 4);
                 diamond_chestplate.addEnchantment(Enchantment.UNBREAKING, 3);
+                e.getDrops().add(new ItemStack(diamond_chestplate));
             } else if (num >= 20 && num < 40) {
                 e.getDrops().add(new ItemStack(Material.OMINOUS_TRIAL_KEY, 2));
-                e.getDrops().add(new ItemStack(Material.DIAMOND_SWORD));
                 diamond_sword.addEnchantment(Enchantment.SHARPNESS, 4);
                 diamond_sword.addEnchantment(Enchantment.UNBREAKING, 3);
+                e.getDrops().add(new ItemStack(diamond_sword));
             } else if (num < 20) {
                 e.getDrops().add(new ItemStack(Material.DIAMOND, 6));
                 e.getDrops().add(new ItemStack(Material.NAME_TAG));

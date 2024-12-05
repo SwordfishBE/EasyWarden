@@ -3,14 +3,18 @@ package me.minecraft.plugin.harderWardens;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
+import org.bukkit.entity.Warden;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.EntitySpawnEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Random;
@@ -28,8 +32,9 @@ public final class HarderWardens extends JavaPlugin implements Listener {
 
         if (e.getEntity() instanceof LivingEntity ent) {
             if (ent.getType() == EntityType.WARDEN) {
+                ent.setCustomName("The Reaper");
                 ent.setCustomNameVisible(false);
-                ent.setCustomName("JOHNY");
+                ent.setPersistent(ent.isCustomNameVisible());
                 ent.setMaxHealth(1000);
                 ent.setHealth(1000);
             }
@@ -67,6 +72,14 @@ public final class HarderWardens extends JavaPlugin implements Listener {
                 e.getDrops().add(new ItemStack(Material.NAME_TAG));
                 e.getDrops().add(new ItemStack(Material.COOKED_BEEF, 8));
             }
+        }
+    }
+    @EventHandler
+    public void wardenAttackEvent(EntityDamageByEntityEvent e) {
+        if (e.getDamager() instanceof Warden) {
+            double originalDamage = e.getDamage();
+            double newDamage = originalDamage * 2.5;
+            e.setDamage(newDamage);
         }
     }
 }

@@ -1,6 +1,6 @@
 (WIP)
 # HarderWardens Plugin
-Wardens are harder to kill but they give much better rewards for defeating them!
+Wardens have much more health and deal more damage but they also give good rewards for defeating them!
 
 **INSTALATION:**
 

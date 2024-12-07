@@ -1,5 +1,5 @@
 name: HarderWardens
-version: 1.0
+version: 1.0.1
 main: me.minecraft.plugin.harderWardens.HarderWardens
 api-version: 1.21
 authors: [ JustErikSK ]

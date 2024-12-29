@@ -1,0 +1,7 @@
+# Configuration file for HarderWardens plugin
+# You can set Warden's difficulty level here
+
+# WARDEN'S DIFFICULTY LEVEL
+# This will apply to all Wardens
+# (Default = NORMAL; Settings = EASY, NORMAL, HARD)
+warden_difficulty: NORMAL

@@ -3,5 +3,11 @@
 
 # WARDEN'S DIFFICULTY LEVEL
 # This will apply to all Wardens
-# (Default = NORMAL; Settings = EASY, NORMAL, HARD)
+# (Default = NORMAL; More difficulty details below)
 warden_difficulty: NORMAL
+
+# Difficulties: EASY, NORMAL, HARD (more coming in the next update!)
+
+# Difficulty EASY details:
+# Difficulty NORMAL details:
+# Difficulty HARD details:

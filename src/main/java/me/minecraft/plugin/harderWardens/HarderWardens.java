@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
@@ -25,18 +26,43 @@ public final class HarderWardens extends JavaPlugin implements Listener {
     public void onEnable() {
         Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_GREEN + "HarderWardens >> Plugin has been enabled!");
         this.getServer().getPluginManager().registerEvents(this, this);
+        this.saveDefaultConfig();
+
+        FileConfiguration config = this.getConfig();
+        config.addDefault("warden_difficulty", "NORMAL");
     }
 
     @EventHandler
     public void wardenSpawnEvent(EntitySpawnEvent e) {
 
+        String warden_difficulty = this.getConfig().getString("warden_difficulty", "NORMAL");
         if (e.getEntity() instanceof LivingEntity ent) {
             if (ent.getType() == EntityType.WARDEN) {
-                ent.setCustomName("The Reaper");
-                ent.setCustomNameVisible(false);
-                ent.setPersistent(ent.isCustomNameVisible());
-                ent.setMaxHealth(1000);
-                ent.setHealth(1000);
+                if (warden_difficulty.equals("EASY")) { // 250HP (125 hearts) on easy difficulty
+                    ent.setCustomName("TEMPORARY NAME EASY"); // Warden's name on easy difficulty is
+                    ent.setCustomNameVisible(false);
+                    ent.setPersistent(ent.isCustomNameVisible());
+                    ent.setMaxHealth(250);
+                    ent.setHealth(1000);
+                } else if (warden_difficulty.equals("NORMAL")) { // 500HP (250 hearts) on normal difficulty
+                    ent.setCustomName("TEMPORARY NAME NORMAL"); // Warden's name on normal difficulty is
+                    ent.setCustomNameVisible(false);
+                    ent.setPersistent(ent.isCustomNameVisible());
+                    ent.setMaxHealth(500);
+                    ent.setHealth(1000);
+                } else if (warden_difficulty.equals("HARD")) { // 1000HP (500 hearts) on hard difficulty
+                    ent.setCustomName("TEMPORARY NAME HARD"); // Warden's name on hard difficulty is
+                    ent.setCustomNameVisible(false);
+                    ent.setPersistent(ent.isCustomNameVisible());
+                    ent.setMaxHealth(1000);
+                    ent.setHealth(1000);
+                } else { // if difficulty not set correctly, default difficulty (normal) will be used
+                    ent.setCustomName("TEMPORARY NAME NORMAL");
+                    ent.setCustomNameVisible(false);
+                    ent.setPersistent(ent.isCustomNameVisible());
+                    ent.setMaxHealth(500);
+                    ent.setHealth(1000);
+                }
             }
         }
     }
@@ -47,39 +73,41 @@ public final class HarderWardens extends JavaPlugin implements Listener {
         Random ran = new Random();
         int num = ran.nextInt(100);
 
-        ItemStack diamond_chestplate = new ItemStack(Material.DIAMOND_CHESTPLATE);
-        ItemStack diamond_sword = new ItemStack(Material.DIAMOND_SWORD);
-
+        String warden_difficulty = this.getConfig().getString("warden_difficulty", "NORMAL");
         if (ent.getType() == EntityType.WARDEN) {
             e.getDrops().clear();
-            if (num >= 80) {
-                e.getDrops().add(new ItemStack(Material.TOTEM_OF_UNDYING));
-            } else if (num >= 60 && num < 80) {
-                e.getDrops().add(new ItemStack(Material.ENCHANTED_GOLDEN_APPLE, 3));
-            } else if (num >= 40 && num < 60) {
-                e.getDrops().add(new ItemStack(Material.RIB_ARMOR_TRIM_SMITHING_TEMPLATE));
-                e.getDrops().add(new ItemStack(Material.SILENCE_ARMOR_TRIM_SMITHING_TEMPLATE));
-                diamond_chestplate.addEnchantment(Enchantment.PROTECTION, 4);
-                diamond_chestplate.addEnchantment(Enchantment.UNBREAKING, 3);
-                e.getDrops().add(new ItemStack(diamond_chestplate));
-            } else if (num >= 20 && num < 40) {
-                e.getDrops().add(new ItemStack(Material.OMINOUS_TRIAL_KEY, 2));
-                diamond_sword.addEnchantment(Enchantment.SHARPNESS, 4);
-                diamond_sword.addEnchantment(Enchantment.UNBREAKING, 3);
-                e.getDrops().add(new ItemStack(diamond_sword));
-            } else if (num < 20) {
-                e.getDrops().add(new ItemStack(Material.DIAMOND, 6));
-                e.getDrops().add(new ItemStack(Material.NAME_TAG));
-                e.getDrops().add(new ItemStack(Material.COOKED_BEEF, 8));
+            if (warden_difficulty.equals("EASY")) { // Loot from wardens on easy difficulty (common drops / uncommon drops)
+
+            } else if (warden_difficulty.equals("NORMAL")) { //  Loot from wardens on normal difficulty (uncommon drops / rare drops)
+
+            } else if (warden_difficulty.equals("HARD")) { // Loot from wardens on normal difficulty (rare drops)
+
+            } else { // if difficulty not set correctly, default difficulty (normal) will be used
+
             }
         }
     }
     @EventHandler
     public void wardenAttackEvent(EntityDamageByEntityEvent e) {
+        String warden_difficulty = this.getConfig().getString("warden_difficulty", "NORMAL");
         if (e.getDamager() instanceof Warden) {
-            double originalDamage = e.getDamage();
-            double newDamage = originalDamage * 2.5;
-            e.setDamage(newDamage);
+            if (warden_difficulty.equals("EASY")) { // 0.5x damage on easy difficulty
+                double originalDamage = e.getDamage();
+                double newDamage = originalDamage * 0.5;
+                e.setDamage(newDamage);
+            } else if (warden_difficulty.equals("NORMAL")) { // 2.2x damage on normal difficulty
+                double originalDamage = e.getDamage();
+                double newDamage = originalDamage * 2.2;
+                e.setDamage(newDamage);
+            } else if (warden_difficulty.equals("HARD")) { // 3.5x damage on hard difficulty
+                double originalDamage = e.getDamage();
+                double newDamage = originalDamage * 3.5;
+                e.setDamage(newDamage);
+            } else { // if difficulty not set correctly, default difficulty (normal) will be used
+                double originalDamage = e.getDamage();
+                double newDamage = originalDamage * 2.2;
+                e.setDamage(newDamage);
+            }
         }
     }
 }

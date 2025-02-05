@@ -43,13 +43,13 @@ public final class HarderWardens extends JavaPlugin implements Listener {
                     ent.setCustomNameVisible(false);
                     ent.setPersistent(ent.isCustomNameVisible());
                     ent.setMaxHealth(250);
-                    ent.setHealth(1000);
+                    ent.setHealth(250);
                 } else if (warden_difficulty.equals("NORMAL")) { // 500HP (250 hearts) on normal difficulty
                     ent.setCustomName("TEMPORARY NAME NORMAL"); // Warden's name on normal difficulty is
                     ent.setCustomNameVisible(false);
                     ent.setPersistent(ent.isCustomNameVisible());
                     ent.setMaxHealth(500);
-                    ent.setHealth(1000);
+                    ent.setHealth(500);
                 } else if (warden_difficulty.equals("HARD")) { // 1000HP (500 hearts) on hard difficulty
                     ent.setCustomName("TEMPORARY NAME HARD"); // Warden's name on hard difficulty is
                     ent.setCustomNameVisible(false);
@@ -61,7 +61,7 @@ public final class HarderWardens extends JavaPlugin implements Listener {
                     ent.setCustomNameVisible(false);
                     ent.setPersistent(ent.isCustomNameVisible());
                     ent.setMaxHealth(500);
-                    ent.setHealth(1000);
+                    ent.setHealth(500);
                 }
             }
         }

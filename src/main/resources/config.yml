@@ -12,16 +12,30 @@ warden_difficulty: NORMAL
 #   Warden's Health: 250 hp (125 hearts)
 #   Warden's Damage: 0.5x multiplier
 #   Warden's Lootables:
+#     - 12 Iron Ingots
+#     - 12 Gold Ingots
+#     - Swift Sneak 1 Book
+#     - Unbreaking 1 Book
+#     - Warden's Fragment (custom loot drop, doesn't have any uses yet)
 
 # Difficulty NORMAL details:
 #   Warden's Health: 500 hp (250 hearts)
 #   Warden's Damage: 2.2x multiplier
 #   Warden's Lootables:
+#     - 2 Netherite Scraps
+#     - 5 Diamonds
+#     - Swift Sneak 2 Book
+#     - Protection 2 Book
+#     - Dark Essence (custom loot drop, doesn't have any uses yet)
 
 # Difficulty HARD details:
 #   Warden's Health: 1000 hp (500 hearts)
 #   Warden's Damage: 3.5x multiplier
 #   Warden's Lootables:
+#     - Enchanted Diamond Chestplate (Protection 4, Unbreaking 3)
+#     - Swift Sneak 3 Book
+#     - Sharpness 4 Book
+#     - Void Fragment (custom loot drop, doesn't have any uses yet)
 
 # Last updated for HarderWardens v1.1
 # Version 1.1 works for MC versions 1.21 - 1.21.4

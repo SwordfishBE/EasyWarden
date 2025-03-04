@@ -39,25 +39,25 @@ public final class HarderWardens extends JavaPlugin implements Listener {
         if (e.getEntity() instanceof LivingEntity ent) {
             if (ent.getType() == EntityType.WARDEN) {
                 if (warden_difficulty.equals("EASY")) { // 250HP (125 hearts) on easy difficulty
-                    ent.setCustomName("TEMPORARY NAME EASY"); // Warden's name on easy difficulty is
+                    ent.setCustomName("Echo Lurker"); // Warden's name on easy difficulty is
                     ent.setCustomNameVisible(false);
                     ent.setPersistent(ent.isCustomNameVisible());
                     ent.setMaxHealth(250);
                     ent.setHealth(250);
                 } else if (warden_difficulty.equals("NORMAL")) { // 500HP (250 hearts) on normal difficulty
-                    ent.setCustomName("TEMPORARY NAME NORMAL"); // Warden's name on normal difficulty is
+                    ent.setCustomName("Abyss Killer"); // Warden's name on normal difficulty is
                     ent.setCustomNameVisible(false);
                     ent.setPersistent(ent.isCustomNameVisible());
                     ent.setMaxHealth(500);
                     ent.setHealth(500);
                 } else if (warden_difficulty.equals("HARD")) { // 1000HP (500 hearts) on hard difficulty
-                    ent.setCustomName("TEMPORARY NAME HARD"); // Warden's name on hard difficulty is
+                    ent.setCustomName("Void Reaper"); // Warden's name on hard difficulty is
                     ent.setCustomNameVisible(false);
                     ent.setPersistent(ent.isCustomNameVisible());
                     ent.setMaxHealth(1000);
                     ent.setHealth(1000);
                 } else { // if difficulty not set correctly, default difficulty (normal) will be used
-                    ent.setCustomName("TEMPORARY NAME NORMAL");
+                    ent.setCustomName("Abyss Killer");
                     ent.setCustomNameVisible(false);
                     ent.setPersistent(ent.isCustomNameVisible());
                     ent.setMaxHealth(500);

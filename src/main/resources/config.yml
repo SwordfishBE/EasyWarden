@@ -2,24 +2,24 @@
 # You can set Warden's difficulty level here
 
 # WARDEN'S DIFFICULTY LEVEL
-# This will apply to all Wardens
+# This will apply to all Wardens (except the warden's name)
 # (Default = NORMAL; More difficulty details below)
 warden_difficulty: NORMAL
 
 # Difficulties: EASY, NORMAL, HARD (more difficulties are planned for future updates!)
 
 # Difficulty EASY details:
-#   Warden's Health: 250 hp
+#   Warden's Health: 250 hp (125 hearts)
 #   Warden's Damage: 0.5x multiplier
 #   Warden's Lootables:
 
 # Difficulty NORMAL details:
-#   Warden's Health: 500 hp
+#   Warden's Health: 500 hp (250 hearts)
 #   Warden's Damage: 2.2x multiplier
 #   Warden's Lootables:
 
 # Difficulty HARD details:
-#   Warden's Health: 1000 hp
+#   Warden's Health: 1000 hp (500 hearts)
 #   Warden's Damage: 3.5x multiplier
 #   Warden's Lootables:
 

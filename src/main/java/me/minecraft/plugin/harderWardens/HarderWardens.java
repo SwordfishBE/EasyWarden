@@ -40,12 +40,12 @@ public final class HarderWardens extends JavaPlugin implements Listener {
         String warden_difficulty = this.getConfig().getString("warden_difficulty", "NORMAL");
         if (e.getEntity() instanceof LivingEntity ent) {
             if (ent.getType() == EntityType.WARDEN) {
-                if (warden_difficulty.equals("EASY")) { // 250HP (125 hearts) on easy difficulty
+                if (warden_difficulty.equals("EASY")) { // 30HP (15 hearts) on easy difficulty
                     ent.setCustomName("Echo Lurker"); // Warden's name on easy difficulty is
                     ent.setCustomNameVisible(false);
                     ent.setPersistent(ent.isCustomNameVisible());
-                    ent.setMaxHealth(250);
-                    ent.setHealth(250);
+                    ent.setMaxHealth(30);
+                    ent.setHealth(30);
                 } else if (warden_difficulty.equals("NORMAL")) { // 500HP (250 hearts) on normal difficulty
                     ent.setCustomName("Abyss Killer"); // Warden's name on normal difficulty is
                     ent.setCustomNameVisible(false);
@@ -193,9 +193,9 @@ public final class HarderWardens extends JavaPlugin implements Listener {
     public void wardenAttackEvent(EntityDamageByEntityEvent e) {
         String warden_difficulty = this.getConfig().getString("warden_difficulty", "NORMAL");
         if (e.getDamager() instanceof Warden) {
-            if (warden_difficulty.equals("EASY")) { // 0.5x damage on easy difficulty
+            if (warden_difficulty.equals("EASY")) { // 0.1x damage on easy difficulty
                 double originalDamage = e.getDamage();
-                double newDamage = originalDamage * 0.5;
+                double newDamage = originalDamage * 0.1;
                 e.setDamage(newDamage);
             } else if (warden_difficulty.equals("NORMAL")) { // 2.2x damage on normal difficulty
                 double originalDamage = e.getDamage();

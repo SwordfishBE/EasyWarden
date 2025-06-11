@@ -1,4 +1,4 @@
-# HarderWardens Plugin
+# Harder Wardens Plugin
 Wardens have much more health and deal more damage but they also give better rewards for defeating them!
 
 Wardens have 500 HP (250hearts), deal 2.2x more damage and drop custom loot by default.

@@ -15,3 +15,5 @@ You can find detailed information about this plugin on our Wiki https://with-rag
 - [CurseForge] https://www.curseforge.com/minecraft/bukkit-plugins/harder-wardens
 - [Modrinth] https://modrinth.com/plugin/harder-wardens
 2. Drop the file in your server's plugins folder and start your server, plugin will automatically load.
+
+This plugin works on Minecraft versions 1.21 - 1.21.5

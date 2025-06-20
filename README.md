@@ -18,3 +18,5 @@ You can find detailed information about this plugin on our Wiki https://with-rag
 3. After first server start with our plugin, new folder with a config file will be created in your server's plugins folder. You can change the warden's difficulty level there.
 
 This plugin works on Minecraft versions 1.21 - 1.21.6
+
+EDIT SwordfishBE: thanks JustErikSK for this plugin. Modified it to make the warden be killed easy. Removed loot drop.

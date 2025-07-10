@@ -1,22 +1,17 @@
-# Harder Wardens Plugin
-Wardens have much more health and deal more damage but they also give better rewards for defeating them!
+# Harder Wardens Plugin - EasyWarden version
+Wardens have much more health and deal more damage or you have the option to set them up like easy kills.
 
-Wardens have 500 HP (250hearts), deal 2.2x more damage and drop custom loot by default.
+Wardens have 60 HP (30hearts), deal 0.1x more damage by default on Easy.
 
-There are 3 difficulty settings that you can change in the config file - Easy, Normal, Hard. More difficulties are planned for future updates.
-
-You can find detailed information about this plugin on our Wiki https://with-rage-studios-plugins.fandom.com/wiki/Harder_Wardens
+There are 3 difficulty settings that you can change in the config file - Easy, Normal, Hard.
 
 **INSTALATION:**
 
-1. Use one of these options to download HarderWardens plugin:
-- [GitHub releases] https://github.com/JustErikSK/HarderWardens-plugin/releases
-- [Spigot] https://www.spigotmc.org/resources/harder-wardens.121160/
-- [CurseForge] https://www.curseforge.com/minecraft/bukkit-plugins/harder-wardens
-- [Modrinth] https://modrinth.com/plugin/harder-wardens
+1. Use this option to download HarderWardens plugin: https://github.com/SwordfishBE/EasyWarden/releases/
 2. Drop the file in your server's plugins folder and start your server, plugin will automatically load.
 3. After first server start with our plugin, new folder with a config file will be created in your server's plugins folder. You can change the warden's difficulty level there.
 
 This plugin works on Minecraft versions 1.21 - 1.21.7
 
-EDIT SwordfishBE: thanks JustErikSK for this plugin. Modified it to make the warden be killed easy. Removed loot drop.
+Thanks JustErikSK for this plugin. Modified it to make the warden be killed easy. Removed loot drop.
+You can find detailed information about the original plugin on their Wiki https://with-rage-studios-plugins.fandom.com/wiki/Harder_Wardens

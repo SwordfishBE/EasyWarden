@@ -1,7 +1,7 @@
 # Harder Wardens Plugin - EasyWarden version
 Wardens have much more health and deal more damage or you have the option to set them up like easy kills.
 
-Wardens have 60 HP (30hearts), deal 0.1x more damage by default on Easy.
+Wardens have 60 HP (30hearts), deal 0.1x less damage by default on Easy.
 
 There are 3 difficulty settings that you can change in the config file - Easy, Normal, Hard.
 

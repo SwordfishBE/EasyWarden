@@ -5,7 +5,7 @@ Wardens have 60 HP (30hearts), deal 0.1x less damage by default on Easy.
 
 There are 3 difficulty settings that you can change in the config file - Easy, Normal, Hard.
 
-**INSTALATION:**
+**INSTALLATION:**
 
 1. Use this option to download HarderWardens plugin: https://github.com/SwordfishBE/EasyWarden/releases/
 2. Drop the file in your server's plugins folder and start your server, plugin will automatically load.
